@@ -11,3 +11,5 @@ Quand tu modifies le fichier src/app.js, tu devras faire un nouveau build de l'a
 Pour ça, il suffit juste de se mettre dans la racine et de taper : 
 
 >npm run build
+
+Dans l'idée, tu vas surtout travailler sur src/app.js, server.js et films.json
