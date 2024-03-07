@@ -1,12 +1,48 @@
 [
     {
-      "nom": "Film 1",
+      "nom": "Avengers",
       "affiche": "https://github.com/GACQUADRO/Caraofun/assets/73235291/a33ee893-9c74-44fe-830d-c0ff6481d5e0",
       "acteurs": ["Acteur 1", "Acteur 2", "Acteur 3"],
       "date_projection": "2024-03-05T18:00:00Z"
     },
     {
       "nom": "Film 2",
+      "affiche": "https://via.placeholder.com/150",
+      "acteurs": ["Acteur 4", "Acteur 5", "Acteur 6"],
+      "date_projection": "2024-03-06T20:00:00Z"
+    },
+    {
+      "nom": "Film 2",
+      "affiche": "https://via.placeholder.com/150",
+      "acteurs": ["Acteur 4", "Acteur 5", "Acteur 6"],
+      "date_projection": "2024-03-06T20:00:00Z"
+    },
+    {
+      "nom": "Film 2",
+      "affiche": "https://via.placeholder.com/150",
+      "acteurs": ["Acteur 4", "Acteur 5", "Acteur 6"],
+      "date_projection": "2024-03-06T20:00:00Z"
+    },
+    {
+      "nom": "Film 2",
+      "affiche": "https://via.placeholder.com/150",
+      "acteurs": ["Acteur 4", "Acteur 5", "Acteur 6"],
+      "date_projection": "2024-03-06T20:00:00Z"
+    },
+    {
+      "nom": "Film 2",
+      "affiche": "https://via.placeholder.com/150",
+      "acteurs": ["Acteur 4", "Acteur 5", "Acteur 6"],
+      "date_projection": "2024-03-06T20:00:00Z"
+    },
+    {
+      "nom": "Film 2",
+      "affiche": "https://via.placeholder.com/150",
+      "acteurs": ["Acteur 4", "Acteur 5", "Acteur 6"],
+      "date_projection": "2024-03-06T20:00:00Z"
+    },
+    {
+      "nom": "gros",
       "affiche": "https://via.placeholder.com/150",
       "acteurs": ["Acteur 4", "Acteur 5", "Acteur 6"],
       "date_projection": "2024-03-06T20:00:00Z"

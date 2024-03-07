@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie {
+  width: 30%; /* Ajustez la largeur selon votre besoin */
+  margin: 1.5%; /* Espace entre les films */
+}
