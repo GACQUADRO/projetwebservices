@@ -4,7 +4,14 @@ import './App.css';
 function App() {
   const [films, setFilms] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-
+  const [newFilm, setNewFilm] = useState({
+    nom: '',
+    affiche: '',
+    acteurs: [],
+    date_projection: ''
+  });
+  const [selectedFilm, setSelectedFilm] = useState('');
+  
   useEffect(() => {
     fetchFilms();
   }, []);
@@ -25,6 +32,57 @@ function App() {
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setNewFilm(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch('/ajouterFilm', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newFilm),
+      });
+      if (!response.ok) {
+        throw new Error('Erreur lors de l\'ajout du film');
+      }
+      const data = await response.json();
+      setFilms([...films, data]);
+      setNewFilm({
+        nom: '',
+        affiche: '',
+        acteurs: [],
+        date_projection: ''
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
+  const handleDelete = async () => {
+    try {
+      const response = await fetch(`/supprimerFilm/${selectedFilm}`, {
+        method: 'DELETE',
+      });
+      if (!response.ok) {
+        throw new Error('Erreur lors de la suppression du film');
+      }
+      await response.json();
+      setFilms(prevFilms => prevFilms.filter(film => film.nom !== selectedFilm));
+      setSelectedFilm('');
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
 
   const filteredFilms = films.filter((film) =>
     film.nom.toLowerCase().includes(searchTerm.toLowerCase())
@@ -61,6 +119,40 @@ function App() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+        <section className="add-movie-section">
+          <h2>Ajouter un nouveau film</h2>
+          <form onSubmit={handleSubmit}>
+            <label>
+              Nom:
+              <input type="text" name="nom" value={newFilm.nom} onChange={handleInputChange} />
+            </label>
+            <label>
+              Affiche:
+              <input type="text" name="affiche" value={newFilm.affiche} onChange={handleInputChange} />
+            </label>
+            <label>
+              Acteurs:
+              <input type="text" name="acteurs" value={newFilm.acteurs} onChange={handleInputChange} />
+            </label>
+            <label>
+              Date de projection:
+              <input type="datetime-local" name="date_projection" value={newFilm.date_projection} onChange={handleInputChange} />
+            </label>
+            <button type="submit">Ajouter</button>
+          </form>
+        </section>
+        <br></br>
+        <section className="remove-movie-section">
+        <div>
+            <select value={selectedFilm} onChange={(e) => setSelectedFilm(e.target.value)}>
+              <option value="">Sélectionner un film à supprimer</option>
+              {filteredFilms.map((film) => (
+                <option key={film.id} value={film.id}>{film.nom}</option>
+              ))}
+            </select>
+            <button onClick={handleDelete}>Supprimer</button>
           </div>
         </section>
       </main>
