@@ -8,10 +8,13 @@ function App() {
     nom: '',
     affiche: '',
     acteurs: [],
-    date_projection: ''
+    date_projection: '',
+    duree: '',
+    budget: '',
+    genre: ''
   });
-  const [selectedFilm, setSelectedFilm] = useState('');
-  
+  const [selectedFilmDetails, setSelectedFilmDetails] = useState(null);
+
   useEffect(() => {
     fetchFilms();
   }, []);
@@ -60,29 +63,39 @@ function App() {
         nom: '',
         affiche: '',
         acteurs: [],
-        date_projection: ''
+        date_projection: '',
+        duree: '',
+        budget: '',
+        genre: ''
       });
     } catch (error) {
       console.error(error);
     }
   };
-  
+
   const handleDelete = async () => {
     try {
-      const response = await fetch(`/supprimerFilm/${selectedFilm}`, {
+      const response = await fetch(`/supprimerFilm/${selectedFilmDetails.nom}`, {
         method: 'DELETE',
       });
       if (!response.ok) {
         throw new Error('Erreur lors de la suppression du film');
       }
       await response.json();
-      setFilms(prevFilms => prevFilms.filter(film => film.nom !== selectedFilm));
-      setSelectedFilm('');
+      setFilms(prevFilms => prevFilms.filter(film => film.nom !== selectedFilmDetails.nom));
+      setSelectedFilmDetails(null);
     } catch (error) {
       console.error(error);
     }
   };
-  
+
+  const handleFilmClick = (film) => {
+    setSelectedFilmDetails(film);
+  };
+
+  const closeModal = () => {
+    setSelectedFilmDetails(null);
+  };
 
   const filteredFilms = films.filter((film) =>
     film.nom.toLowerCase().includes(searchTerm.toLowerCase())
@@ -110,7 +123,7 @@ function App() {
           <h2>Films à l'affiche</h2>
           <div className="movies-container" style={containerStyle}>
             {filteredFilms.map((film, index) => (
-              <div className="movie" key={index}>
+              <div className="movie" key={index} onClick={() => handleFilmClick(film)}>
                 <img src={film.affiche} alt={`Affiche de ${film.nom}`} width="150" height="225" />
                 <div className="movie-details">
                   <h3>{film.nom}</h3>
@@ -140,16 +153,28 @@ function App() {
               Date de projection:
               <input type="datetime-local" name="date_projection" value={newFilm.date_projection} onChange={handleInputChange} />
             </label>
+            <label>
+              Durée:
+              <input type="text" name="duree" value={newFilm.duree} onChange={handleInputChange} />
+            </label>
+            <label>
+              Budget:
+              <input type="text" name="budget" value={newFilm.budget} onChange={handleInputChange} />
+            </label>
+            <label>
+              Genre:
+              <input type="text" name="genre" value={newFilm.genre} onChange={handleInputChange} />
+            </label>
             <button type="submit">Ajouter</button>
           </form>
         </section>
         <br></br>
         <section className="remove-movie-section">
-        <div>
-            <select value={selectedFilm} onChange={(e) => setSelectedFilm(e.target.value)}>
+          <div>
+            <select value={selectedFilmDetails ? selectedFilmDetails.nom : ''} onChange={(e) => setSelectedFilmDetails(e.target.value)}>
               <option value="">Sélectionner un film à supprimer</option>
               {filteredFilms.map((film) => (
-                <option key={film.id} value={film.id}>{film.nom}</option>
+                <option key={film.nom} value={film.nom}>{film.nom}</option>
               ))}
             </select>
             <button onClick={handleDelete}>Supprimer</button>
@@ -157,8 +182,23 @@ function App() {
         </section>
       </main>
       <footer className="footer">
-        <p>&copy; 2024 Cinéma XYZ. Tous droits réservés.</p>
+        <p>&copy; 2024 Cinéma MDG. Tous droits réservés.</p>
       </footer>
+      {selectedFilmDetails && (
+        <div className="modal" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <span className="close" onClick={closeModal}>&times;</span>
+            <h2>{selectedFilmDetails.nom}</h2>
+            <img className="modal-image" src={selectedFilmDetails.affiche} alt={`Affiche de ${selectedFilmDetails.nom}`} />
+            <p>Acteurs: {selectedFilmDetails.acteurs.join(', ')}</p>
+            <p>Date de projection: {new Date(selectedFilmDetails.date_projection).toLocaleString()}</p>
+            <p>Durée: {selectedFilmDetails.duree}</p>
+            <p>Budget: {selectedFilmDetails.budget}</p>
+            <p>Genre: {selectedFilmDetails.genre}</p>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }

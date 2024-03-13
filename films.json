@@ -1,72 +1,107 @@
 [
   {
-    "nom": "Avengers",
+    "nom": "Avengers: Endgame",
     "affiche": "https://github.com/GACQUADRO/Caraofun/assets/73235291/a33ee893-9c74-44fe-830d-c0ff6481d5e0",
     "acteurs": [
-      "Acteur 1",
-      "Acteur 2",
-      "Acteur 3"
+      "Robert Downey Jr.",
+      "Chris Evans",
+      "Scarlett Johansson",
+      "Chris Hemsworth",
+      "Mark Ruffalo"
     ],
-    "date_projection": "2024-03-05T18:00:00Z"
+    "date_projection": "2024-03-05T18:00:00Z",
+    "duree": "3h2min",
+    "budget": "$356 million",
+    "genre": "Action, Aventure, Drama"
   },
   {
-    "nom": "Star wars",
+    "nom": "Star Wars: The Rise of Skywalker",
     "affiche": "https://via.placeholder.com/150",
     "acteurs": [
-      "Acteur 4",
-      "Acteur 5",
-      "Acteur 6"
+      "Daisy Ridley",
+      "Adam Driver",
+      "John Boyega",
+      "Oscar Isaac",
+      "Carrie Fisher"
     ],
-    "date_projection": "2024-03-06T20:00:00Z"
+    "date_projection": "2024-03-06T20:00:00Z",
+    "duree": "2h22min",
+    "budget": "$275 million",
+    "genre": "Action, Aventure, Fantasie"
   },
   {
-    "nom": "Film 2",
+    "nom": "Inception",
     "affiche": "https://via.placeholder.com/150",
     "acteurs": [
-      "Acteur 4",
-      "Acteur 5",
-      "Acteur 6"
+      "Leonardo DiCaprio",
+      "Joseph Gordon-Levitt",
+      "Ellen Page",
+      "Tom Hardy",
+      "Ken Watanabe"
     ],
-    "date_projection": "2024-03-06T20:00:00Z"
+    "date_projection": "2024-03-07T19:30:00Z",
+    "duree": "2h28min",
+    "budget": "$160 million",
+    "genre": "Action, Aventure, Sci-Fi"
   },
   {
-    "nom": "Film 2",
+    "nom": "Titanic",
     "affiche": "https://via.placeholder.com/150",
     "acteurs": [
-      "Acteur 4",
-      "Acteur 5",
-      "Acteur 6"
+      "Leonardo DiCaprio",
+      "Kate Winslet",
+      "Billy Zane",
+      "Kathy Bates",
+      "Frances Fisher"
     ],
-    "date_projection": "2024-03-06T20:00:00Z"
+    "date_projection": "2024-03-08T21:00:00Z",
+    "duree": "3h14min",
+    "budget": "$200 million",
+    "genre": "Drama, Romance"
   },
   {
-    "nom": "Film 2",
+    "nom": "The Dark Knight",
     "affiche": "https://via.placeholder.com/150",
     "acteurs": [
-      "Acteur 4",
-      "Acteur 5",
-      "Acteur 6"
+      "Christian Bale",
+      "Heath Ledger",
+      "Aaron Eckhart",
+      "Michael Caine",
+      "Maggie Gyllenhaal"
     ],
-    "date_projection": "2024-03-06T20:00:00Z"
+    "date_projection": "2024-03-09T20:15:00Z",
+    "duree": "2h32min",
+    "budget": "$185 million",
+    "genre": "Action, Crime, Drama"
   },
   {
-    "nom": "Film 2",
+    "nom": "Avatar",
     "affiche": "https://via.placeholder.com/150",
     "acteurs": [
-      "Acteur 4",
-      "Acteur 5",
-      "Acteur 6"
+      "Sam Worthington",
+      "Zoe Saldana",
+      "Sigourney Weaver",
+      "Stephen Lang",
+      "Michelle Rodriguez"
     ],
-    "date_projection": "2024-03-06T20:00:00Z"
+    "date_projection": "2024-03-10T18:45:00Z",
+    "duree": "2h42min",
+    "budget": "$237 million",
+    "genre": "Action, Aventure, Fantaisie"
   },
   {
-    "nom": "Film 2",
+    "nom": "Jurassic Park",
     "affiche": "https://via.placeholder.com/150",
     "acteurs": [
-      "Acteur 4",
-      "Acteur 5",
-      "Acteur 6"
+      "Sam Neill",
+      "Laura Dern",
+      "Jeff Goldblum",
+      "Richard Attenborough",
+      "Bob Peck"
     ],
-    "date_projection": "2024-03-06T20:00:00Z"
+    "date_projection": "2024-03-11T19:00:00Z",
+    "duree": "2h7min",
+    "budget": "$63 million",
+    "genre": "Action, Aventure, Sci-Fi"
   }
 ]
