@@ -188,6 +188,7 @@ function App() {
           </form>
         </section>
         <section className="remove-movie-section">
+          <br></br>
           <div>
             <select value={selectedFilm} onChange={handleFilmChange}>
               <option value="">Sélectionner un film à supprimer</option>

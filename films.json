@@ -61,7 +61,7 @@
   },
   {
     "nom": "The Dark Knight",
-    "affiche": "https://via.placeholder.com/150",
+    "affiche": "https://github.com/GACQUADRO/projetwebservices/assets/73235291/01ea0a3c-6088-47a8-b98d-5a013dba1866",
     "acteurs": [
       "Christian Bale",
       "Heath Ledger",
@@ -103,16 +103,5 @@
     "duree": "2h7min",
     "budget": "$63 million",
     "genre": "Action, Aventure, Sci-Fi"
-  },
-  {
-    "nom": "Le film",
-    "affiche": "azer",
-    "acteurs": [
-      "Grégoire"
-    ],
-    "date_projection": "2024-03-30T10:11",
-    "duree": "10h",
-    "budget": "3€",
-    "genre": "Sympa"
   }
 ]
